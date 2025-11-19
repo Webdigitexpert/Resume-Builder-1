@@ -1,0 +1,1168 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Form",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "EmailStr",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "os,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os.",
+        "description": "os.",
+        "detail": "os.",
+        "documentation": {}
+    },
+    {
+        "label": "parse_resume_to_text",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_skills",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_resume_to_text",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_skills",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_job_description",
+        "importPath": "libs.service.jd_parser",
+        "description": "libs.service.jd_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.jd_parser",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embeddings",
+        "importPath": "libs.service.embedding_service",
+        "description": "libs.service.embedding_service",
+        "isExtraImport": true,
+        "detail": "libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embeddings",
+        "importPath": "libs.service.embedding_service",
+        "description": "libs.service.embedding_service",
+        "isExtraImport": true,
+        "detail": "libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_similarity_score",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "skill_gap_analysis",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_similarity_score",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "skill_gap_analysis",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "export_score_pdf",
+        "importPath": "libs.service.pdf_service",
+        "description": "libs.service.pdf_service",
+        "isExtraImport": true,
+        "detail": "libs.service.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "apps.services.user_services.app.index",
+        "description": "apps.services.user_services.app.index",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.index",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "importPath": "apps.services.admin_services.app.index",
+        "description": "apps.services.admin_services.app.index",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.index",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "resources.database.base",
+        "description": "resources.database.base",
+        "isExtraImport": true,
+        "detail": "resources.database.base",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "resources.database.base",
+        "description": "resources.database.base",
+        "isExtraImport": true,
+        "detail": "resources.database.base",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "resources.database.base",
+        "description": "resources.database.base",
+        "isExtraImport": true,
+        "detail": "resources.database.base",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "importPath": "resources.database.session",
+        "description": "resources.database.session",
+        "isExtraImport": true,
+        "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "resources.database.session",
+        "description": "resources.database.session",
+        "isExtraImport": true,
+        "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "resources.database.session",
+        "description": "resources.database.session",
+        "isExtraImport": true,
+        "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "resources.database.session",
+        "description": "resources.database.session",
+        "isExtraImport": true,
+        "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "get_admin_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "JobCreate",
+        "importPath": "apps.services.admin_services.app.schemas.job_schemas",
+        "description": "apps.services.admin_services.app.schemas.job_schemas",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "JobResponse",
+        "importPath": "apps.services.admin_services.app.schemas.job_schemas",
+        "description": "apps.services.admin_services.app.schemas.job_schemas",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "importPath": "apps.services.admin_services.app.models.job_models",
+        "description": "apps.services.admin_services.app.models.job_models",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.models.job_models",
+        "documentation": {}
+    },
+    {
+        "label": "hash_password",
+        "importPath": "resources.auth.password_hash",
+        "description": "resources.auth.password_hash",
+        "isExtraImport": true,
+        "detail": "resources.auth.password_hash",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "resources.auth.password_hash",
+        "description": "resources.auth.password_hash",
+        "isExtraImport": true,
+        "detail": "resources.auth.password_hash",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "resources.auth.jwt_handler",
+        "description": "resources.auth.jwt_handler",
+        "isExtraImport": true,
+        "detail": "resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "decode_access_token",
+        "importPath": "resources.auth.jwt_handler",
+        "description": "resources.auth.jwt_handler",
+        "isExtraImport": true,
+        "detail": "resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "importPath": "apps.services.user_services.app.schemas.user_schemas",
+        "description": "apps.services.user_services.app.schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SentenceTransformer",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "util",
+        "importPath": "sentence_transformers",
+        "description": "sentence_transformers",
+        "isExtraImport": true,
+        "detail": "sentence_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "canvas",
+        "importPath": "reportlab.pdfgen",
+        "description": "reportlab.pdfgen",
+        "isExtraImport": true,
+        "detail": "reportlab.pdfgen",
+        "documentation": {}
+    },
+    {
+        "label": "docx2txt",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "docx2txt",
+        "description": "docx2txt",
+        "detail": "docx2txt",
+        "documentation": {}
+    },
+    {
+        "label": "PdfReader",
+        "importPath": "PyPDF2",
+        "description": "PyPDF2",
+        "isExtraImport": true,
+        "detail": "PyPDF2",
+        "documentation": {}
+    },
+    {
+        "label": "pytesseract",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytesseract",
+        "description": "pytesseract",
+        "detail": "pytesseract",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "JWTError",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "MatchRequest",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.api.main",
+        "description": "resume-matching-system.apps.api.main",
+        "peekOfCode": "class MatchRequest(BaseModel):\n    resume_text: str\n    jd_text: str\n    resume_skills: list[str]\n    jd_skills: list[str]\n# ---------- Core Endpoints ----------\n@app.post(\"/upload/resume\")\nasync def upload_resume(file: UploadFile = File(...)):\n    os.makedirs(\"temp\", exist_ok=True)\n    contents = await file.read()",
+        "detail": "resume-matching-system.apps.api.main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.api.main",
+        "description": "resume-matching-system.apps.api.main",
+        "peekOfCode": "app = FastAPI(title=\"Resume Matching System API\")\n# create tables\nBase.metadata.create_all(bind=engine)\n# === include microservice routers ===\napp.include_router(user_router)\napp.include_router(admin_router)\n# ---------- ML Request Models ----------\nclass MatchRequest(BaseModel):\n    resume_text: str\n    jd_text: str",
+        "detail": "resume-matching-system.apps.api.main",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "description": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "peekOfCode": "class Job(Base):\n    __tablename__ = \"jobs\"\n    id = Column(Integer, primary_key=True, index=True)\n    title = Column(String, nullable=False)\n    description = Column(String, nullable=False)\n    skills_required = Column(String, nullable=False)  # comma-separated\n    experience_required = Column(Float, nullable=True)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "documentation": {}
+    },
+    {
+        "label": "create_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def create_job(\n    job: JobCreate,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    skills_str = \",\".join(job.skills_required)\n    new_job = Job(\n        title=job.title,\n        description=job.description,\n        skills_required=skills_str,",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "list_jobs",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def list_jobs(\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    return db.query(Job).all()\n@router.get(\"/{job_id}\", response_model=JobResponse)\ndef get_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def get_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    return job\n@router.put(\"/{job_id}\", response_model=JobResponse)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "update_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def update_job(\n    job_id: int,\n    job_data: JobCreate,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    job.title = job_data.title",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "delete_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def delete_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    db.delete(job)\n    db.commit()",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "router = APIRouter(prefix=\"/jobs\", tags=[\"Jobs\"])\n@router.post(\"/{job_id}/match-resume\")\nasync def match_resume_to_job(\n    job_id: int,\n    file: UploadFile = File(...),\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "JobCreate",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "description": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "peekOfCode": "class JobCreate(BaseModel):\n    title: str\n    description: str\n    skills_required: List[str]\n    experience_required: Optional[float] = None\nclass JobResponse(JobCreate):\n    id: int\n    class Config:\n        orm_mode = True",
+        "detail": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "JobResponse",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "description": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "peekOfCode": "class JobResponse(JobCreate):\n    id: int\n    class Config:\n        orm_mode = True",
+        "detail": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.index",
+        "description": "resume-matching-system.apps.services.admin_services.app.index",
+        "peekOfCode": "router = APIRouter()\nrouter.include_router(job_routes.router)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.index",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.user_services.app.models.user_model",
+        "description": "resume-matching-system.apps.services.user_services.app.models.user_model",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, nullable=False)\n    email = Column(String, unique=True, index=True, nullable=False)\n    password = Column(String, nullable=False)\n    role = Column(String, default=\"user\")",
+        "detail": "resume-matching-system.apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "peekOfCode": "def register(user: UserCreate, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if existing:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    hashed = hash_password(user.password)\n    new_user = User(name=user.name, email=user.email, password=hashed)\n    db.add(new_user)\n    db.commit()\n    db.refresh(new_user)\n    return new_user",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "peekOfCode": "def login(user: UserLogin, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if not existing or not verify_password(user.password, existing.password):\n        raise HTTPException(status_code=401, detail=\"Invalid credentials\")\n    token = create_access_token({\"sub\": existing.email})\n    return {\"access_token\": token, \"token_type\": \"bearer\"}",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "peekOfCode": "router = APIRouter(prefix=\"/auth\", tags=[\"Auth\"])\n@router.post(\"/register\", response_model=UserResponse)\ndef register(user: UserCreate, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if existing:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    hashed = hash_password(user.password)\n    new_user = User(name=user.name, email=user.email, password=hashed)\n    db.add(new_user)\n    db.commit()",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_me",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "peekOfCode": "def get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "peekOfCode": "router = APIRouter(prefix=\"/users\", tags=[\"Users\"])\n@router.get(\"/me\", response_model=UserResponse)\ndef get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "documentation": {}
+    },
+    {
+        "label": "UserCreate",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "peekOfCode": "class UserCreate(BaseModel):\n    name: str\n    email: EmailStr\n    password: str\nclass UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    name: str",
+        "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserLogin",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "peekOfCode": "class UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    name: str\n    email: EmailStr\n    role: str\n    class Config:\n        orm_mode = True",
+        "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserResponse",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "peekOfCode": "class UserResponse(BaseModel):\n    id: int\n    name: str\n    email: EmailStr\n    role: str\n    class Config:\n        orm_mode = True",
+        "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.user_services.app.index",
+        "description": "resume-matching-system.apps.services.user_services.app.index",
+        "peekOfCode": "router = APIRouter()\nrouter.include_router(auth_routes.router)\nrouter.include_router(profile_routes.router)",
+        "detail": "resume-matching-system.apps.services.user_services.app.index",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embeddings",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.embedding_service",
+        "description": "resume-matching-system.libs.service.embedding_service",
+        "peekOfCode": "def generate_embeddings(text):\n    return model.encode(text)",
+        "detail": "resume-matching-system.libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "resume-matching-system.libs.service.embedding_service",
+        "description": "resume-matching-system.libs.service.embedding_service",
+        "peekOfCode": "model = SentenceTransformer(\"all-mpnet-base-v2\")\ndef generate_embeddings(text):\n    return model.encode(text)",
+        "detail": "resume-matching-system.libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "parse_job_description",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.jd_parser",
+        "description": "resume-matching-system.libs.service.jd_parser",
+        "peekOfCode": "def parse_job_description(text: str):\n    lines = text.lower().splitlines()\n    required_skills = []\n    experience = None\n    for line in lines:\n        if \"experience\" in line:\n            experience = line\n        if \"skills\" in line or \"requirements\" in line:\n            required_skills.extend(line.split(\",\"))\n    return {",
+        "detail": "resume-matching-system.libs.service.jd_parser",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_similarity_score",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.match_scoring",
+        "description": "resume-matching-system.libs.service.match_scoring",
+        "peekOfCode": "def calculate_similarity_score(resume_embedding, jd_embedding):\n    score = util.cos_sim(resume_embedding, jd_embedding)\n    return float(score[0][0] * 100)\ndef skill_gap_analysis(resume_skills, jd_skills):\n    missing = list(set(jd_skills) - set(resume_skills))\n    matched = list(set(jd_skills) & set(resume_skills))\n    return matched, missing",
+        "detail": "resume-matching-system.libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "skill_gap_analysis",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.match_scoring",
+        "description": "resume-matching-system.libs.service.match_scoring",
+        "peekOfCode": "def skill_gap_analysis(resume_skills, jd_skills):\n    missing = list(set(jd_skills) - set(resume_skills))\n    matched = list(set(jd_skills) & set(resume_skills))\n    return matched, missing",
+        "detail": "resume-matching-system.libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "export_score_pdf",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.pdf_service",
+        "description": "resume-matching-system.libs.service.pdf_service",
+        "peekOfCode": "def export_score_pdf(path, score, matched, missing):\n    c = canvas.Canvas(path)\n    c.drawString(100, 800, f\"Job Match Score: {score}\")\n    c.drawString(100, 760, f\"Matched Skills: {', '.join(matched)}\")\n    c.drawString(100, 720, f\"Missing Skills: {', '.join(missing)}\")\n    c.save()",
+        "detail": "resume-matching-system.libs.service.pdf_service",
+        "documentation": {}
+    },
+    {
+        "label": "extract_text_from_pdf",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_text_from_pdf(path):\n    reader = PdfReader(path)\n    return \"\\n\".join([page.extract_text() for page in reader.pages])\ndef extract_text_from_docx(path):\n    return docx2txt.process(path)\ndef extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_text_from_docx",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_text_from_docx(path):\n    return docx2txt.process(path)\ndef extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_text_from_image",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:\n        return extract_text_from_image(file_path)\ndef extract_skills(text: str):",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_resume_to_text",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:\n        return extract_text_from_image(file_path)\ndef extract_skills(text: str):\n    skill_keywords = [\"python\", \"fastapi\", \"docker\", \"aws\", \"ml\", \"nlp\", \"react\"]\n    return [skill for skill in skill_keywords if skill.lower() in text.lower()]",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_skills",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_skills(text: str):\n    skill_keywords = [\"python\", \"fastapi\", \"docker\", \"aws\", \"ml\", \"nlp\", \"react\"]\n    return [skill for skill in skill_keywords if skill.lower() in text.lower()]",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.dependencies",
+        "description": "resume-matching-system.resources.auth.dependencies",
+        "peekOfCode": "def get_current_user(\n    token: str = Depends(oauth2_scheme),\n    db: Session = Depends(get_db)\n) -> User:\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    email: str = payload.get(\"sub\")\n    if email is None:\n        raise HTTPException(status_code=401, detail=\"Invalid token payload\")",
+        "detail": "resume-matching-system.resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "get_admin_user",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.dependencies",
+        "description": "resume-matching-system.resources.auth.dependencies",
+        "peekOfCode": "def get_admin_user(current_user: User = Depends(get_current_user)) -> User:\n    if current_user.role != \"admin\":\n        raise HTTPException(status_code=403, detail=\"Admin access required\")\n    return current_user",
+        "detail": "resume-matching-system.resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "oauth2_scheme",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.auth.dependencies",
+        "description": "resume-matching-system.resources.auth.dependencies",
+        "peekOfCode": "oauth2_scheme = OAuth2PasswordBearer(tokenUrl=\"/auth/login\")\ndef get_current_user(\n    token: str = Depends(oauth2_scheme),\n    db: Session = Depends(get_db)\n) -> User:\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    email: str = payload.get(\"sub\")\n    if email is None:",
+        "detail": "resume-matching-system.resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.jwt_handler",
+        "description": "resume-matching-system.resources.auth.jwt_handler",
+        "peekOfCode": "def create_access_token(data: dict, expires_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=expires_minutes)\n    to_encode.update({\"exp\": expire})\n    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\ndef decode_access_token(token: str):\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])\n        return payload\n    except JWTError:",
+        "detail": "resume-matching-system.resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "decode_access_token",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.jwt_handler",
+        "description": "resume-matching-system.resources.auth.jwt_handler",
+        "peekOfCode": "def decode_access_token(token: str):\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])\n        return payload\n    except JWTError:\n        return None",
+        "detail": "resume-matching-system.resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.auth.jwt_handler",
+        "description": "resume-matching-system.resources.auth.jwt_handler",
+        "peekOfCode": "SECRET_KEY = \"SUPER_SECRET_KEY_CHANGE_ME\"\nALGORITHM = \"HS256\"\nACCESS_TOKEN_EXPIRE_MINUTES = 60\ndef create_access_token(data: dict, expires_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=expires_minutes)\n    to_encode.update({\"exp\": expire})\n    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\ndef decode_access_token(token: str):\n    try:",
+        "detail": "resume-matching-system.resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.auth.jwt_handler",
+        "description": "resume-matching-system.resources.auth.jwt_handler",
+        "peekOfCode": "ALGORITHM = \"HS256\"\nACCESS_TOKEN_EXPIRE_MINUTES = 60\ndef create_access_token(data: dict, expires_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=expires_minutes)\n    to_encode.update({\"exp\": expire})\n    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\ndef decode_access_token(token: str):\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])",
+        "detail": "resume-matching-system.resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.auth.jwt_handler",
+        "description": "resume-matching-system.resources.auth.jwt_handler",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = 60\ndef create_access_token(data: dict, expires_minutes: int = ACCESS_TOKEN_EXPIRE_MINUTES):\n    to_encode = data.copy()\n    expire = datetime.utcnow() + timedelta(minutes=expires_minutes)\n    to_encode.update({\"exp\": expire})\n    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)\ndef decode_access_token(token: str):\n    try:\n        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])\n        return payload",
+        "detail": "resume-matching-system.resources.auth.jwt_handler",
+        "documentation": {}
+    },
+    {
+        "label": "hash_password",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.password_hash",
+        "description": "resume-matching-system.resources.auth.password_hash",
+        "peekOfCode": "def hash_password(password: str) -> str:\n    return pwd_context.hash(password)\ndef verify_password(plain_password: str, hashed: str) -> bool:\n    return pwd_context.verify(plain_password, hashed)",
+        "detail": "resume-matching-system.resources.auth.password_hash",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.auth.password_hash",
+        "description": "resume-matching-system.resources.auth.password_hash",
+        "peekOfCode": "def verify_password(plain_password: str, hashed: str) -> bool:\n    return pwd_context.verify(plain_password, hashed)",
+        "detail": "resume-matching-system.resources.auth.password_hash",
+        "documentation": {}
+    },
+    {
+        "label": "pwd_context",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.auth.password_hash",
+        "description": "resume-matching-system.resources.auth.password_hash",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef hash_password(password: str) -> str:\n    return pwd_context.hash(password)\ndef verify_password(plain_password: str, hashed: str) -> bool:\n    return pwd_context.verify(plain_password, hashed)",
+        "detail": "resume-matching-system.resources.auth.password_hash",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.database.base",
+        "description": "resume-matching-system.resources.database.base",
+        "peekOfCode": "Base = declarative_base()",
+        "detail": "resume-matching-system.resources.database.base",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "resume-matching-system.resources.database.session",
+        "description": "resume-matching-system.resources.database.session",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "resume-matching-system.resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "DATABASE_URL",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.database.session",
+        "description": "resume-matching-system.resources.database.session",
+        "peekOfCode": "DATABASE_URL = \"postgresql://postgres:Admin%40123@localhost:5432/resume_db\"\nengine = create_engine(DATABASE_URL, future=True)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "resume-matching-system.resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.database.session",
+        "description": "resume-matching-system.resources.database.session",
+        "peekOfCode": "engine = create_engine(DATABASE_URL, future=True)\nSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "resume-matching-system.resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "SessionLocal",
+        "kind": 5,
+        "importPath": "resume-matching-system.resources.database.session",
+        "description": "resume-matching-system.resources.database.session",
+        "peekOfCode": "SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "resume-matching-system.resources.database.session",
+        "documentation": {}
+    }
+]
