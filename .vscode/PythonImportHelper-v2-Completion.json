@@ -40,6 +40,22 @@
         "documentation": {}
     },
     {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -157,6 +173,14 @@
         "description": "fastapi",
         "isExtraImport": true,
         "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "JSONResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
         "documentation": {}
     },
     {
@@ -366,6 +390,22 @@
         "description": "resources.database.session",
         "isExtraImport": true,
         "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
+        "label": "Middleware",
+        "importPath": "starlette.middleware",
+        "description": "starlette.middleware",
+        "isExtraImport": true,
+        "detail": "starlette.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "BaseHTTPMiddleware",
+        "importPath": "starlette.middleware.base",
+        "description": "starlette.middleware.base",
+        "isExtraImport": true,
+        "detail": "starlette.middleware.base",
         "documentation": {}
     },
     {
@@ -729,7 +769,16 @@
         "kind": 6,
         "importPath": "resume-matching-system.apps.api.main",
         "description": "resume-matching-system.apps.api.main",
-        "peekOfCode": "class MatchRequest(BaseModel):\n    resume_text: str\n    jd_text: str\n    resume_skills: list[str]\n    jd_skills: list[str]\n# ---------- Core Endpoints ----------\n@app.post(\"/upload/resume\")\nasync def upload_resume(file: UploadFile = File(...)):\n    os.makedirs(\"temp\", exist_ok=True)\n    contents = await file.read()",
+        "peekOfCode": "class MatchRequest(BaseModel):\n    resume_text: str\n    jd_text: str\n    resume_skills: list[str]\n    jd_skills: list[str]\nclass LimitUploadSize(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        if int(request.headers.get(\"content-length\", 0)) > 1024 * 1024 * 20:  # 20 MB limit\n            return JSONResponse({\"detail\": \"File too large\"}, status_code=413)\n        return await call_next(request)",
+        "detail": "resume-matching-system.apps.api.main",
+        "documentation": {}
+    },
+    {
+        "label": "LimitUploadSize",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.api.main",
+        "description": "resume-matching-system.apps.api.main",
+        "peekOfCode": "class LimitUploadSize(BaseHTTPMiddleware):\n    async def dispatch(self, request, call_next):\n        if int(request.headers.get(\"content-length\", 0)) > 1024 * 1024 * 20:  # 20 MB limit\n            return JSONResponse({\"detail\": \"File too large\"}, status_code=413)\n        return await call_next(request)\napp.add_middleware(LimitUploadSize)\n# ---------- Core Endpoints ----------\n@app.on_event(\"startup\")\nasync def startup_event():\n    print(\"\\n🚀 Server is running at: http://127.0.0.1:8000\")",
         "detail": "resume-matching-system.apps.api.main",
         "documentation": {}
     },
@@ -855,7 +904,7 @@
         "kind": 2,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
-        "peekOfCode": "def login(user: UserLogin, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if not existing or not verify_password(user.password, existing.password):\n        raise HTTPException(status_code=401, detail=\"Invalid credentials\")\n    token = create_access_token({\"sub\": existing.email})\n    return {\"access_token\": token, \"token_type\": \"bearer\"}",
+        "peekOfCode": "def login(user: UserLogin, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if not existing or not verify_password(user.password, existing.password):\n        raise HTTPException(status_code=401, detail=\"Invalid credentials\")\n    token = create_access_token({\"sub\": existing.email})\n    return {\n            \"user\": {\"id\": existing.id, \"name\": existing.name, \"email\": existing.email, \"role\": existing.role,\"access_token\": token, \"token_type\": \"bearer\"}\n            }",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "documentation": {}
     },
@@ -869,20 +918,11 @@
         "documentation": {}
     },
     {
-        "label": "get_me",
-        "kind": 2,
-        "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
-        "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
-        "peekOfCode": "def get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
-        "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "kind": 5,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
-        "peekOfCode": "router = APIRouter(prefix=\"/users\", tags=[\"Users\"])\n@router.get(\"/me\", response_model=UserResponse)\ndef get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
+        "peekOfCode": "router = APIRouter(prefix=\"/users\", tags=[\"Users\"])\n# @router.get(\"/me\", response_model=UserResponse)\n# def get_me(current_user: User = Depends(get_current_user)):\n#     return current_user",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
         "documentation": {}
     },
@@ -1116,7 +1156,7 @@
         "kind": 5,
         "importPath": "resume-matching-system.resources.auth.password_hash",
         "description": "resume-matching-system.resources.auth.password_hash",
-        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef hash_password(password: str) -> str:\n    return pwd_context.hash(password)\ndef verify_password(plain_password: str, hashed: str) -> bool:\n    return pwd_context.verify(plain_password, hashed)",
+        "peekOfCode": "pwd_context = CryptContext(schemes=[\"bcrypt_sha256\"], deprecated=\"auto\")\ndef hash_password(password: str) -> str:\n    return pwd_context.hash(password)\ndef verify_password(plain_password: str, hashed: str) -> bool:\n    return pwd_context.verify(plain_password, hashed)",
         "detail": "resume-matching-system.resources.auth.password_hash",
         "documentation": {}
     },

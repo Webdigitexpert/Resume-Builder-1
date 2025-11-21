@@ -1,6 +1,8 @@
-from fastapi import FastAPI, UploadFile, File, Form, Response
+from fastapi import FastAPI, UploadFile, File, Form, Response, HTTPException, Depends
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 import os, uuid
+
 
 # ML / NLP services
 from libs.service.resume_parser import parse_resume_to_text, extract_skills
@@ -17,6 +19,10 @@ from apps.services.admin_services.app.index import router as admin_router
 
 from resources.database.base import Base
 from resources.database.session import engine
+
+from starlette.middleware import Middleware
+from starlette.middleware.base import BaseHTTPMiddleware
+
 
 app = FastAPI(title="Resume Matching System API")
 
@@ -35,7 +41,22 @@ class MatchRequest(BaseModel):
     resume_skills: list[str]
     jd_skills: list[str]
 
+
+class LimitUploadSize(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        if int(request.headers.get("content-length", 0)) > 1024 * 1024 * 20:  # 20 MB limit
+            return JSONResponse({"detail": "File too large"}, status_code=413)
+        return await call_next(request)
+
+app.add_middleware(LimitUploadSize)
 # ---------- Core Endpoints ----------
+
+@app.on_event("startup")
+async def startup_event():
+    print("\n🚀 Server is running at: http://127.0.0.1:8000")
+    print("📌 Swagger Docs: http://127.0.0.1:8000/docs\n")
+
+
 
 @app.post("/upload/resume")
 async def upload_resume(file: UploadFile = File(...)):
@@ -53,8 +74,29 @@ async def upload_resume(file: UploadFile = File(...)):
     return {"text": text, "skills": skills}
 
 @app.post("/upload/jd")
-async def upload_jd(text: str = Form(...)):
-    return parse_job_description(text)
+async def upload_jd(
+    text: str | None = Form(None),
+    file: UploadFile | None = File(None)
+):
+    # If neither text nor file is provided
+    if not text and not file:
+        raise HTTPException(status_code=400, detail="Provide Job Description text or upload a file")
+
+    # If JD text exists
+    if text:
+        jd_text = text
+    else:
+        # Process uploaded file
+        os.makedirs("temp", exist_ok=True)
+        contents = await file.read()
+        temp_path = os.path.join("temp", file.filename)
+
+        with open(temp_path, "wb") as f:
+            f.write(contents)
+
+        jd_text = parse_job_description(temp_path)
+
+    return {"jd_text": jd_text}
 
 @app.post("/match")
 async def match(request: MatchRequest):
