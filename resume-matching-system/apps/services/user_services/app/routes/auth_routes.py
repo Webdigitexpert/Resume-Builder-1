@@ -1,34 +1,57 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+import random
+from datetime import datetime, timedelta
 
 from resources.database.session import get_db
-from resources.auth.password_hash import hash_password, verify_password
 from resources.auth.jwt_handler import create_access_token
 from ..models.user_model import User
-from ..schemas.user_schemas import UserCreate, UserLogin, UserResponse
+from ..schemas.user_schemas import PhoneSchema, OTPVerifySchema
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
-@router.post("/register", response_model=UserResponse)
-def register(user: UserCreate, db: Session = Depends(get_db)):
-    existing = db.query(User).filter(User.email == user.email).first()
-    if existing:
-        raise HTTPException(status_code=400, detail="Email already registered")
+# Temporary in-memory OTP storage (you can replace using Redis later)
+otp_store = {}
 
-    hashed = hash_password(user.password)
-    new_user = User(name=user.name, email=user.email, password=hashed)
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
-    return new_user
+@router.post("/register")
+def register(data: PhoneSchema, db: Session = Depends(get_db)):
+    phone = data.phone
 
-@router.post("/login")
-def login(user: UserLogin, db: Session = Depends(get_db)):
-    existing = db.query(User).filter(User.email == user.email).first()
-    if not existing or not verify_password(user.password, existing.password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+    otp = random.randint(100000, 999999)
+    otp_store[phone] = {"otp": otp, "expires": datetime.utcnow() + timedelta(minutes=5)}
 
-    token = create_access_token({"sub": existing.email})
+    print("OTP:", otp)  # TODO: integrate SMS gateway
+
+    return {"message": "OTP sent successfully",
+            "otp": otp}
+
+@router.post("/verify")
+def verify(data: OTPVerifySchema, db: Session = Depends(get_db)):
+    stored = otp_store.get(data.phone)
+
+    if not stored or stored["otp"] != data.otp:
+        raise HTTPException(status_code=400, detail="Invalid OTP")
+
+    if stored["expires"] < datetime.utcnow():
+        raise HTTPException(status_code=400, detail="OTP expired")
+
+    # Check if user exists
+    existing = db.query(User).filter(User.phone == data.phone).first()
+
+    if not existing:
+        new_user = User(phone=data.phone)
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
+        existing = new_user
+
+    token = create_access_token({"sub": existing.phone})
+
+    del otp_store[data.phone]  # Clear used OTP
+
     return {
-            "user": {"id": existing.id, "name": existing.name, "email": existing.email, "role": existing.role,"access_token": token, "token_type": "bearer"}
-            }
+        "message": "Verification successful",
+        "user": {"id": existing.id, "phone": existing.phone},
+        "access_token": token,
+        "token_type": "bearer"
+    }

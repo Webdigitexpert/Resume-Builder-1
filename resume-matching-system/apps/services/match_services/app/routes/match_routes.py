@@ -21,7 +21,7 @@ async def get_match(result_id: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Result not found")
     return result
 
-@router.get("/")
+@router.get("/all")
 async def get_all_matches(db: Session = Depends(get_db)):
     results = db.query(MatchResult).all()
     return results

@@ -280,14 +280,6 @@
         "documentation": {}
     },
     {
-        "label": "EmailStr",
-        "importPath": "pydantic",
-        "description": "pydantic",
-        "isExtraImport": true,
-        "detail": "pydantic",
-        "documentation": {}
-    },
-    {
         "label": "os,",
         "kind": 6,
         "isExtraImport": true,
@@ -406,6 +398,30 @@
         "description": "apps.services.match_services.app.routes.upload_routes",
         "isExtraImport": true,
         "detail": "apps.services.match_services.app.routes.upload_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "get_admin_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
         "documentation": {}
     },
     {
@@ -777,14 +793,6 @@
         "documentation": {}
     },
     {
-        "label": "Integer",
-        "importPath": "sqlalchemy",
-        "description": "sqlalchemy",
-        "isExtraImport": true,
-        "detail": "sqlalchemy",
-        "documentation": {}
-    },
-    {
         "label": "String",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -883,19 +891,44 @@
         "documentation": {}
     },
     {
-        "label": "hash_password",
-        "importPath": "resources.auth.password_hash",
-        "description": "resources.auth.password_hash",
+        "label": "random",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "resources.auth.password_hash",
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
         "documentation": {}
     },
     {
-        "label": "verify_password",
-        "importPath": "resources.auth.password_hash",
-        "description": "resources.auth.password_hash",
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
         "isExtraImport": true,
-        "detail": "resources.auth.password_hash",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
         "documentation": {}
     },
     {
@@ -912,14 +945,6 @@
         "description": "resources.auth.jwt_handler",
         "isExtraImport": true,
         "detail": "resources.auth.jwt_handler",
-        "documentation": {}
-    },
-    {
-        "label": "get_current_user",
-        "importPath": "resources.auth.dependencies",
-        "description": "resources.auth.dependencies",
-        "isExtraImport": true,
-        "detail": "resources.auth.dependencies",
         "documentation": {}
     },
     {
@@ -1022,22 +1047,6 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "timedelta",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "jwt",
         "importPath": "jose",
         "description": "jose",
@@ -1102,7 +1111,7 @@
         "kind": 5,
         "importPath": "resume-matching-system.apps.api.main",
         "description": "resume-matching-system.apps.api.main",
-        "peekOfCode": "app = FastAPI(title=\"Resume Matching System API\")\n# create tables\nBase.metadata.create_all(bind=engine)\n# === include microservice routers ===\napp.include_router(user_router)\napp.include_router(admin_router)\napp.include_router(match_router)\napp.include_router(upload_router)\n# ---------- ML Request Models ----------\nclass MatchRequest(BaseModel):",
+        "peekOfCode": "app = FastAPI(title=\"Resume Matching System API\")\n# create tables\nBase.metadata.create_all(bind=engine)\n# === include microservice routers ===\napp.include_router(user_router)\napp.include_router(admin_router)\napp.include_router(match_router)\napp.include_router(upload_router)\n# ---------- ML Request Models ----------\n# Protected routes",
         "detail": "resume-matching-system.apps.api.main",
         "documentation": {}
     },
@@ -1237,7 +1246,7 @@
         "kind": 5,
         "importPath": "resume-matching-system.apps.services.match_services.app.routes.match_routes",
         "description": "resume-matching-system.apps.services.match_services.app.routes.match_routes",
-        "peekOfCode": "router = APIRouter(prefix=\"/match\", tags=[\"Match Results\"])\n@router.get(\"/{result_id}\")\nasync def get_match(result_id: str, db: Session = Depends(get_db)):\n    result = db.query(MatchResult).filter(MatchResult.id == result_id).first()\n    if not result:\n        raise HTTPException(status_code=404, detail=\"Result not found\")\n    return result\n@router.get(\"/\")\nasync def get_all_matches(db: Session = Depends(get_db)):\n    results = db.query(MatchResult).all()",
+        "peekOfCode": "router = APIRouter(prefix=\"/match\", tags=[\"Match Results\"])\n@router.get(\"/{result_id}\")\nasync def get_match(result_id: str, db: Session = Depends(get_db)):\n    result = db.query(MatchResult).filter(MatchResult.id == result_id).first()\n    if not result:\n        raise HTTPException(status_code=404, detail=\"Result not found\")\n    return result\n@router.get(\"/all\")\nasync def get_all_matches(db: Session = Depends(get_db)):\n    results = db.query(MatchResult).all()",
         "detail": "resume-matching-system.apps.services.match_services.app.routes.match_routes",
         "documentation": {}
     },
@@ -1255,7 +1264,7 @@
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.user_services.app.models.user_model",
         "description": "resume-matching-system.apps.services.user_services.app.models.user_model",
-        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(Integer, primary_key=True, index=True)\n    name = Column(String, nullable=False)\n    email = Column(String, unique=True, index=True, nullable=False)\n    password = Column(String, nullable=False)\n    role = Column(String, default=\"user\")",
+        "peekOfCode": "class User(Base):\n    __tablename__ = \"users\"\n    id = Column(String, primary_key=True, default=lambda: str(uuid.uuid4()))\n    phone = Column(String, unique=True, nullable=False)\n    role = Column(String, default=\"user\")",
         "detail": "resume-matching-system.apps.services.user_services.app.models.user_model",
         "documentation": {}
     },
@@ -1264,16 +1273,16 @@
         "kind": 2,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
-        "peekOfCode": "def register(user: UserCreate, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if existing:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    hashed = hash_password(user.password)\n    new_user = User(name=user.name, email=user.email, password=hashed)\n    db.add(new_user)\n    db.commit()\n    db.refresh(new_user)\n    return new_user",
+        "peekOfCode": "def register(data: PhoneSchema, db: Session = Depends(get_db)):\n    phone = data.phone\n    otp = random.randint(100000, 999999)\n    otp_store[phone] = {\"otp\": otp, \"expires\": datetime.utcnow() + timedelta(minutes=5)}\n    print(\"OTP:\", otp)  # TODO: integrate SMS gateway\n    return {\"message\": \"OTP sent successfully\",\n            \"otp\": otp}\n@router.post(\"/verify\")\ndef verify(data: OTPVerifySchema, db: Session = Depends(get_db)):\n    stored = otp_store.get(data.phone)",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "documentation": {}
     },
     {
-        "label": "login",
+        "label": "verify",
         "kind": 2,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
-        "peekOfCode": "def login(user: UserLogin, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if not existing or not verify_password(user.password, existing.password):\n        raise HTTPException(status_code=401, detail=\"Invalid credentials\")\n    token = create_access_token({\"sub\": existing.email})\n    return {\n            \"user\": {\"id\": existing.id, \"name\": existing.name, \"email\": existing.email, \"role\": existing.role,\"access_token\": token, \"token_type\": \"bearer\"}\n            }",
+        "peekOfCode": "def verify(data: OTPVerifySchema, db: Session = Depends(get_db)):\n    stored = otp_store.get(data.phone)\n    if not stored or stored[\"otp\"] != data.otp:\n        raise HTTPException(status_code=400, detail=\"Invalid OTP\")\n    if stored[\"expires\"] < datetime.utcnow():\n        raise HTTPException(status_code=400, detail=\"OTP expired\")\n    # Check if user exists\n    existing = db.query(User).filter(User.phone == data.phone).first()\n    if not existing:\n        new_user = User(phone=data.phone)",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "documentation": {}
     },
@@ -1282,8 +1291,26 @@
         "kind": 5,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
-        "peekOfCode": "router = APIRouter(prefix=\"/auth\", tags=[\"Auth\"])\n@router.post(\"/register\", response_model=UserResponse)\ndef register(user: UserCreate, db: Session = Depends(get_db)):\n    existing = db.query(User).filter(User.email == user.email).first()\n    if existing:\n        raise HTTPException(status_code=400, detail=\"Email already registered\")\n    hashed = hash_password(user.password)\n    new_user = User(name=user.name, email=user.email, password=hashed)\n    db.add(new_user)\n    db.commit()",
+        "peekOfCode": "router = APIRouter(prefix=\"/auth\", tags=[\"Auth\"])\n# Temporary in-memory OTP storage (you can replace using Redis later)\notp_store = {}\n@router.post(\"/register\")\ndef register(data: PhoneSchema, db: Session = Depends(get_db)):\n    phone = data.phone\n    otp = random.randint(100000, 999999)\n    otp_store[phone] = {\"otp\": otp, \"expires\": datetime.utcnow() + timedelta(minutes=5)}\n    print(\"OTP:\", otp)  # TODO: integrate SMS gateway\n    return {\"message\": \"OTP sent successfully\",",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "otp_store",
+        "kind": 5,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "peekOfCode": "otp_store = {}\n@router.post(\"/register\")\ndef register(data: PhoneSchema, db: Session = Depends(get_db)):\n    phone = data.phone\n    otp = random.randint(100000, 999999)\n    otp_store[phone] = {\"otp\": otp, \"expires\": datetime.utcnow() + timedelta(minutes=5)}\n    print(\"OTP:\", otp)  # TODO: integrate SMS gateway\n    return {\"message\": \"OTP sent successfully\",\n            \"otp\": otp}\n@router.post(\"/verify\")",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_me",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
+        "peekOfCode": "def get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
+        "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
         "documentation": {}
     },
     {
@@ -1291,25 +1318,25 @@
         "kind": 5,
         "importPath": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
         "description": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
-        "peekOfCode": "router = APIRouter(prefix=\"/users\", tags=[\"Users\"])\n# @router.get(\"/me\", response_model=UserResponse)\n# def get_me(current_user: User = Depends(get_current_user)):\n#     return current_user",
+        "peekOfCode": "router = APIRouter(prefix=\"/users\", tags=[\"Users\"])\n@router.get(\"/me\", response_model=UserResponse)\ndef get_me(current_user: User = Depends(get_current_user)):\n    return current_user",
         "detail": "resume-matching-system.apps.services.user_services.app.routes.profile_routes",
         "documentation": {}
     },
     {
-        "label": "UserCreate",
+        "label": "PhoneSchema",
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
-        "peekOfCode": "class UserCreate(BaseModel):\n    name: str\n    email: EmailStr\n    password: str\nclass UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    name: str",
+        "peekOfCode": "class PhoneSchema(BaseModel):\n    phone: str\nclass OTPVerifySchema(BaseModel):\n    phone: str\n    otp: int\nclass UserResponse(BaseModel):\n    id: str\n    phone: str",
         "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "documentation": {}
     },
     {
-        "label": "UserLogin",
+        "label": "OTPVerifySchema",
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
-        "peekOfCode": "class UserLogin(BaseModel):\n    email: EmailStr\n    password: str\nclass UserResponse(BaseModel):\n    id: int\n    name: str\n    email: EmailStr\n    role: str\n    class Config:\n        orm_mode = True",
+        "peekOfCode": "class OTPVerifySchema(BaseModel):\n    phone: str\n    otp: int\nclass UserResponse(BaseModel):\n    id: str\n    phone: str",
         "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "documentation": {}
     },
@@ -1318,7 +1345,7 @@
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "description": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
-        "peekOfCode": "class UserResponse(BaseModel):\n    id: int\n    name: str\n    email: EmailStr\n    role: str\n    class Config:\n        orm_mode = True",
+        "peekOfCode": "class UserResponse(BaseModel):\n    id: str\n    phone: str",
         "detail": "resume-matching-system.apps.services.user_services.app.schemas.user_schemas",
         "documentation": {}
     },

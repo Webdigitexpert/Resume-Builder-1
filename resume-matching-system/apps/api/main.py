@@ -17,7 +17,7 @@ from apps.services.admin_services.app.index import router as admin_router
 from apps.services.match_services.app.routes.match_routes import router as match_router
 from apps.services.match_services.app.routes.upload_routes import router as upload_router
 
-
+from resources.auth.dependencies import get_current_user, get_admin_user
 
 from resources.database.base import Base
 from resources.database.session import engine
@@ -37,6 +37,7 @@ from libs.service.jd_parser import parse_job_description
 
 
 
+
 app = FastAPI(title="Resume Matching System API")
 
 # create tables
@@ -48,6 +49,12 @@ app.include_router(admin_router)
 app.include_router(match_router)
 app.include_router(upload_router)
 # ---------- ML Request Models ----------
+
+# Protected routes
+app.include_router(admin_router, dependencies=[Depends(get_admin_user)])
+app.include_router(match_router, dependencies=[Depends(get_current_user)])
+app.include_router(upload_router, dependencies=[Depends(get_current_user)])
+app.include_router(user_router, dependencies=[Depends(get_current_user)])
 
 class MatchRequest(BaseModel):
     resume_id: str
