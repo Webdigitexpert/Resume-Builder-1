@@ -72,6 +72,38 @@
         "documentation": {}
     },
     {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "UploadFile",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "File",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
         "label": "APIRouter",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -313,6 +345,22 @@
         "documentation": {}
     },
     {
+        "label": "extract_skills",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "parse_resume_to_text",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
         "label": "parse_job_description",
         "importPath": "libs.service.jd_parser",
         "description": "libs.service.jd_parser",
@@ -342,6 +390,30 @@
         "description": "libs.service.embedding_service",
         "isExtraImport": true,
         "detail": "libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "generate_embeddings",
+        "importPath": "libs.service.embedding_service",
+        "description": "libs.service.embedding_service",
+        "isExtraImport": true,
+        "detail": "libs.service.embedding_service",
+        "documentation": {}
+    },
+    {
+        "label": "calculate_similarity_score",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
+        "documentation": {}
+    },
+    {
+        "label": "skill_gap_analysis",
+        "importPath": "libs.service.match_scoring",
+        "description": "libs.service.match_scoring",
+        "isExtraImport": true,
+        "detail": "libs.service.match_scoring",
         "documentation": {}
     },
     {
@@ -417,11 +489,27 @@
         "documentation": {}
     },
     {
+        "label": "get_admin_user",
+        "importPath": "resources.auth.dependencies",
+        "description": "resources.auth.dependencies",
+        "isExtraImport": true,
+        "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
         "label": "get_current_user",
         "importPath": "resources.auth.dependencies",
         "description": "resources.auth.dependencies",
         "isExtraImport": true,
         "detail": "resources.auth.dependencies",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "resources.database.base",
+        "description": "resources.database.base",
+        "isExtraImport": true,
+        "detail": "resources.database.base",
         "documentation": {}
     },
     {
@@ -513,6 +601,14 @@
         "documentation": {}
     },
     {
+        "label": "get_db",
+        "importPath": "resources.database.session",
+        "description": "resources.database.session",
+        "isExtraImport": true,
+        "detail": "resources.database.session",
+        "documentation": {}
+    },
+    {
         "label": "Middleware",
         "importPath": "starlette.middleware",
         "description": "starlette.middleware",
@@ -526,6 +622,14 @@
         "description": "starlette.middleware.base",
         "isExtraImport": true,
         "detail": "starlette.middleware.base",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
         "documentation": {}
     },
     {
@@ -657,27 +761,35 @@
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "detail": "typing",
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -809,6 +921,95 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "apps.services.user_services.app.models.user_model",
+        "description": "apps.services.user_services.app.models.user_model",
+        "isExtraImport": true,
+        "detail": "apps.services.user_services.app.models.user_model",
+        "documentation": {}
+    },
+    {
+        "label": "JobCreate",
+        "importPath": "apps.services.admin_services.app.schemas.job_schemas",
+        "description": "apps.services.admin_services.app.schemas.job_schemas",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "JobResponse",
+        "importPath": "apps.services.admin_services.app.schemas.job_schemas",
+        "description": "apps.services.admin_services.app.schemas.job_schemas",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.schemas.job_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "Job",
+        "importPath": "apps.services.admin_services.app.models.job_models",
+        "description": "apps.services.admin_services.app.models.job_models",
+        "isExtraImport": true,
+        "detail": "apps.services.admin_services.app.models.job_models",
+        "documentation": {}
+    },
+    {
         "label": "uuid",
         "kind": 6,
         "isExtraImport": true,
@@ -823,15 +1024,6 @@
         "description": "sqlalchemy.dialects.postgresql",
         "isExtraImport": true,
         "detail": "sqlalchemy.dialects.postgresql",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -1039,14 +1231,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "apps.services.user_services.app.models.user_model",
-        "description": "apps.services.user_services.app.models.user_model",
-        "isExtraImport": true,
-        "detail": "apps.services.user_services.app.models.user_model",
-        "documentation": {}
-    },
-    {
         "label": "jwt",
         "importPath": "jose",
         "description": "jose",
@@ -1116,11 +1300,56 @@
         "documentation": {}
     },
     {
-        "label": "get_jobs",
+        "label": "Job",
+        "kind": 6,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "description": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "peekOfCode": "class Job(Base):\n    __tablename__ = \"jobs\"\n    id = Column(Integer, primary_key=True, index=True)\n    title = Column(String, nullable=False)\n    description = Column(String, nullable=False)\n    skills_required = Column(String, nullable=False)  # comma-separated\n    experience_required = Column(Float, nullable=True)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.models.job_models",
+        "documentation": {}
+    },
+    {
+        "label": "create_job",
         "kind": 2,
         "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
         "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
-        "peekOfCode": "def get_jobs():\n    return {\"message\": \"All jobs\"}",
+        "peekOfCode": "def create_job(\n    job: JobCreate,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    skills_str = \",\".join(job.skills_required)\n    new_job = Job(\n        title=job.title,\n        description=job.description,\n        skills_required=skills_str,",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "list_jobs",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def list_jobs(\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    return db.query(Job).all()\n@router.get(\"/{job_id}\", response_model=JobResponse)\ndef get_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "get_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def get_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    return job\n@router.put(\"/{job_id}\", response_model=JobResponse)",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "update_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def update_job(\n    job_id: int,\n    job_data: JobCreate,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    job.title = job_data.title",
+        "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "documentation": {}
+    },
+    {
+        "label": "delete_job",
+        "kind": 2,
+        "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
+        "peekOfCode": "def delete_job(\n    job_id: int,\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:\n        raise HTTPException(status_code=404, detail=\"Job not found\")\n    db.delete(job)\n    db.commit()",
         "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
         "documentation": {}
     },
@@ -1129,7 +1358,7 @@
         "kind": 5,
         "importPath": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
         "description": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
-        "peekOfCode": "router = APIRouter(\n    prefix=\"/jobs\",\n    tags=[\"Jobs\"]\n)\n@router.get(\"/\")\ndef get_jobs():\n    return {\"message\": \"All jobs\"}",
+        "peekOfCode": "router = APIRouter(prefix=\"/jobs\", tags=[\"Jobs\"])\n@router.post(\"/{job_id}/match-resume\")\nasync def match_resume_to_job(\n    job_id: int,\n    file: UploadFile = File(...),\n    db: Session = Depends(get_db),\n    admin: User = Depends(get_admin_user)\n):\n    job = db.query(Job).filter(Job.id == job_id).first()\n    if not job:",
         "detail": "resume-matching-system.apps.services.admin_services.app.routes.job_routes",
         "documentation": {}
     },
