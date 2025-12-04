@@ -5,6 +5,11 @@ from ..models.user_model import User
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
-@router.get("/me", response_model=UserResponse)
+@router.get("/me")
 def get_me(current_user: User = Depends(get_current_user)):
-    return current_user
+    return {
+        "id": current_user.id,
+        "phone": current_user.phone,
+        "role": current_user.role
+    }
+

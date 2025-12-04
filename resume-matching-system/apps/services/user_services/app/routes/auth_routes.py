@@ -8,6 +8,9 @@ from resources.auth.jwt_handler import create_access_token
 from ..models.user_model import User
 from ..schemas.user_schemas import PhoneSchema, OTPVerifySchema
 
+from apps.services.match_services.app.models.upload_model import Resume, JobDescription
+from apps.services.match_services.app.models.match_models import MatchResult
+
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 # Temporary in-memory OTP storage (you can replace using Redis later)
@@ -55,3 +58,50 @@ def verify(data: OTPVerifySchema, db: Session = Depends(get_db)):
         "access_token": token,
         "token_type": "bearer"
     }
+    
+@router.get("/dashboard/summary")
+async def admin_summary(db: Session = Depends(get_db)):
+    total_resumes = db.query(Resume).count()
+    total_jobs = db.query(JobDescription).count()
+    total_matches = db.query(MatchResult).count()
+
+    return {
+        "total_resumes": total_resumes,
+        "total_jobs": total_jobs,
+        "total_matches": total_matches
+    }
+    
+@router.get("/dashboard/job/{jd_id}/ranking")
+async def job_ranking(jd_id: str, db: Session = Depends(get_db)):
+    jd = db.query(JobDescription).filter(JobDescription.id == jd_id).first()
+    if not jd:
+        raise HTTPException(status_code=404, detail="Job not found")
+
+    # Get all match results for this job
+    matches = (
+        db.query(MatchResult)
+        .join(Resume, MatchResult.resume_id == Resume.id)
+        .filter(MatchResult.jd_id == jd_id)
+        .all()
+    )
+
+    # Sort by score desc
+    ranked = sorted(matches, key=lambda m: m.score, reverse=True)
+
+    response = []
+    for m in ranked:
+        # get resume again or use relationship
+        resume = db.query(Resume).filter(Resume.id == m.resume_id).first()
+        response.append({
+            "resume_id": m.resume_id,
+            "candidate_name": resume.candidate_name,
+            "candidate_email": resume.candidate_email,
+            "score": m.score,
+            "matched_skills": m.matched,
+            "missing_skills": m.missing,
+            "summary": m.summary,
+            "status": "Shortlist" if m.score >= 70 else "Review"
+        })
+
+    return {"job_id": jd_id, "job_title": jd.file_name, "candidates": response}
+

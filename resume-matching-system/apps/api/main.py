@@ -16,6 +16,7 @@ from apps.services.user_services.app.index import router as user_router
 from apps.services.admin_services.app.index import router as admin_router
 from apps.services.match_services.app.routes.match_routes import router as match_router
 from apps.services.match_services.app.routes.upload_routes import router as upload_router
+from apps.services.user_services.app.routes.auth_routes import router as auth_router
 
 from resources.auth.dependencies import get_current_user, get_admin_user
 
@@ -44,17 +45,14 @@ app = FastAPI(title="Resume Matching System API")
 Base.metadata.create_all(bind=engine)
 
 # === include microservice routers ===
-app.include_router(user_router)
-app.include_router(admin_router)
-app.include_router(match_router)
-app.include_router(upload_router)
+app.include_router(auth_router)
 # ---------- ML Request Models ----------
 
 # Protected routes
+app.include_router(user_router, dependencies=[Depends(get_current_user)])
 app.include_router(admin_router, dependencies=[Depends(get_admin_user)])
 app.include_router(match_router, dependencies=[Depends(get_current_user)])
 app.include_router(upload_router, dependencies=[Depends(get_current_user)])
-app.include_router(user_router, dependencies=[Depends(get_current_user)])
 
 class MatchRequest(BaseModel):
     resume_id: str
@@ -87,7 +85,15 @@ async def startup_event():
 
 
 @app.post("/upload/resume")
-async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_db)):
+async def upload_resume(
+    file: UploadFile = File(...),
+    candidate_name: str = Form(...),
+    candidate_email: str = Form(...),
+    candidate_phone: str = Form(...),
+    years_of_experience: float = Form(...),
+    db: Session = Depends(get_db),
+    current_user = Depends(get_current_user)   # token required
+):
     os.makedirs("temp", exist_ok=True)
 
     contents = await file.read()
@@ -99,18 +105,32 @@ async def upload_resume(file: UploadFile = File(...), db: Session = Depends(get_
     text = parse_resume_to_text(temp_path)
     skills = extract_skills(text)
 
-    resume = Resume(file_name=file.filename, text=text)
+    resume = Resume(
+        file_name=file.filename,
+        text=text,
+        candidate_name=candidate_name,
+        candidate_email=candidate_email,
+        candidate_phone=candidate_phone,
+        years_of_experience=years_of_experience,
+        user_id=current_user.id
+    )
+
     db.add(resume)
     db.commit()
     db.refresh(resume)
 
-    return {"resume_id": resume.id, "message": "Resume uploaded successfully"}
+    return {
+        "resume_id": resume.id,
+        "message": "Resume uploaded successfully"
+    }
+
 
 @app.post("/upload/jd")
 async def upload_jd(
     text: str | None = Form(None),
     file: UploadFile | None = File(None),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    user = Depends(get_current_user)
 ):
     # If neither text nor file is provided
     if not text and not file:
@@ -146,7 +166,8 @@ async def upload_jd(
     }
 
 @app.post("/match")
-async def match(request: MatchRequest, db: Session = Depends(get_db)):
+async def match(request: MatchRequest, db: Session = Depends(get_db),
+                  user = Depends(get_current_user)):
     resume = db.query(Resume).filter(Resume.id == request.resume_id).first()
     jd = db.query(JobDescription).filter(JobDescription.id == request.jd_id).first()
 
@@ -175,7 +196,7 @@ async def match(request: MatchRequest, db: Session = Depends(get_db)):
     return {"match_id": result.id, "score": score, "matched": matched, "missing": missing}
 
 @app.post("/export/pdf")
-async def export_pdf(data: ExportPdfDto, db: Session = Depends(get_db)):
+async def export_pdf(data: ExportPdfDto, db: Session = Depends(get_db), user = Depends(get_current_user)):
     result = db.query(MatchResult).filter(MatchResult.id == data.match_id).first()
     if not result:
         raise HTTPException(status_code=404, detail="Match result not found")

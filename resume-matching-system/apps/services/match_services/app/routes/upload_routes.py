@@ -3,6 +3,9 @@ from sqlalchemy.orm import Session
 import os
 
 from resources.database.session import get_db
+from resources.auth.dependencies import get_current_user
+from apps.services.user_services.app.models.user_model import User
+
 from apps.services.match_services.app.models.upload_model import Resume, JobDescription
 from apps.services.match_services.app.dto.upload_dto import ResumeUpdateDto, JDUpdateDto
 from libs.service.resume_parser import parse_resume_to_text
@@ -18,6 +21,14 @@ async def get_resume(resume_id: str, db: Session = Depends(get_db)):
     if not result:
         raise HTTPException(status_code=404, detail="Resume not found")
     return result
+
+@router.get("/resume/my")
+async def get_my_resumes(
+    db: Session = Depends(get_db),
+    current_user: User = Depends(get_current_user)
+):
+    results = db.query(Resume).filter(Resume.user_id == current_user.id).all()
+    return results
 
 @router.put("/resume/{resume_id}")
 async def update_resume(resume_id: str, data: ResumeUpdateDto, db: Session = Depends(get_db)):

@@ -3,12 +3,13 @@ from typing import List, Optional
 
 class JobCreate(BaseModel):
     title: str
+    required_skills: list[str]
+    min_experience: int
     description: str
-    skills_required: List[str]
-    experience_required: Optional[float] = None
+
 
 class JobResponse(JobCreate):
-    id: int
+    id: str
 
     class Config:
         orm_mode = True
