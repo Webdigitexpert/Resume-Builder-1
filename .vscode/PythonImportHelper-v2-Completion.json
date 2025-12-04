@@ -393,6 +393,14 @@
         "documentation": {}
     },
     {
+        "label": "extract_skills",
+        "importPath": "libs.service.resume_parser",
+        "description": "libs.service.resume_parser",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
         "label": "parse_job_description",
         "importPath": "libs.service.jd_parser",
         "description": "libs.service.jd_parser",
@@ -969,6 +977,14 @@
         "documentation": {}
     },
     {
+        "label": "extract_resume_details",
+        "importPath": "libs.service.resume_extractor",
+        "description": "libs.service.resume_extractor",
+        "isExtraImport": true,
+        "detail": "libs.service.resume_extractor",
+        "documentation": {}
+    },
+    {
         "label": "Column",
         "importPath": "sqlalchemy",
         "description": "sqlalchemy",
@@ -1161,6 +1177,15 @@
         "documentation": {}
     },
     {
+        "label": "sqlalchemy.dialects.postgresql",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy.dialects.postgresql",
+        "description": "sqlalchemy.dialects.postgresql",
+        "detail": "sqlalchemy.dialects.postgresql",
+        "documentation": {}
+    },
+    {
         "label": "UUID",
         "importPath": "sqlalchemy.dialects.postgresql",
         "description": "sqlalchemy.dialects.postgresql",
@@ -1190,6 +1215,14 @@
         "isExtraImport": true,
         "importPath": "uuid",
         "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
         "detail": "uuid",
         "documentation": {}
     },
@@ -1532,6 +1565,15 @@
         "documentation": {}
     },
     {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "docx2txt",
         "kind": 6,
         "isExtraImport": true,
@@ -1563,15 +1605,6 @@
         "description": "PIL",
         "isExtraImport": true,
         "detail": "PIL",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
         "documentation": {}
     },
     {
@@ -1763,7 +1796,7 @@
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
         "description": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
-        "peekOfCode": "class JobCreate(BaseModel):\n    title: str\n    required_skills: list[str]\n    min_experience: int\n    description: str\nclass JobResponse(JobCreate):\n    id: str\n    class Config:\n        orm_mode = True",
+        "peekOfCode": "class JobCreate(BaseModel):\n    title: str\n    required_skills: list[str]\n    min_experience: int\n    description: str\nclass JobResponse(JobCreate):\n    id: UUID\n    class Config:\n        orm_mode = True",
         "detail": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
         "documentation": {}
     },
@@ -1772,7 +1805,7 @@
         "kind": 6,
         "importPath": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
         "description": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
-        "peekOfCode": "class JobResponse(JobCreate):\n    id: str\n    class Config:\n        orm_mode = True",
+        "peekOfCode": "class JobResponse(JobCreate):\n    id: UUID\n    class Config:\n        orm_mode = True",
         "detail": "resume-matching-system.apps.services.admin_services.app.schemas.job_schemas",
         "documentation": {}
     },
@@ -2056,6 +2089,15 @@
         "documentation": {}
     },
     {
+        "label": "extract_resume_details",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_extractor",
+        "description": "resume-matching-system.libs.service.resume_extractor",
+        "peekOfCode": "def extract_resume_details(text: str):\n    # --------- Extract Email ---------\n    email_match = re.search(r\"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}\", text)\n    email = email_match.group(0) if email_match else None\n    # --------- Extract Phone ---------\n    phone_match = re.search(r\"\\+?\\d[\\d\\s\\-]{8,15}\", text)\n    phone = phone_match.group(0).strip() if phone_match else None\n    # --------- Extract Name (first line heuristic) ---------\n    lines = text.split(\"\\n\")\n    name = lines[0].strip() if len(lines[0]) < 50 else None",
+        "detail": "resume-matching-system.libs.service.resume_extractor",
+        "documentation": {}
+    },
+    {
         "label": "extract_text_from_pdf",
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
@@ -2105,7 +2147,7 @@
         "kind": 2,
         "importPath": "resume-matching-system.resources.auth.dependencies",
         "description": "resume-matching-system.resources.auth.dependencies",
-        "peekOfCode": "def get_current_user(\n    credentials: HTTPAuthorizationCredentials = Depends(security),\n    db: Session = Depends(get_db)\n) -> User:\n    token = credentials.credentials\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    email: str = payload.get(\"sub\")\n    if email is None:",
+        "peekOfCode": "def get_current_user(\n    credentials: HTTPAuthorizationCredentials = Depends(security),\n    db: Session = Depends(get_db)\n) -> User:\n    token = credentials.credentials\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    phone: str = payload.get(\"sub\")      # <-- now using phone!\n    if phone is None:",
         "detail": "resume-matching-system.resources.auth.dependencies",
         "documentation": {}
     },
@@ -2123,7 +2165,7 @@
         "kind": 5,
         "importPath": "resume-matching-system.resources.auth.dependencies",
         "description": "resume-matching-system.resources.auth.dependencies",
-        "peekOfCode": "security = HTTPBearer()\ndef get_current_user(\n    credentials: HTTPAuthorizationCredentials = Depends(security),\n    db: Session = Depends(get_db)\n) -> User:\n    token = credentials.credentials\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    email: str = payload.get(\"sub\")",
+        "peekOfCode": "security = HTTPBearer()\ndef get_current_user(\n    credentials: HTTPAuthorizationCredentials = Depends(security),\n    db: Session = Depends(get_db)\n) -> User:\n    token = credentials.credentials\n    payload = decode_access_token(token)\n    if payload is None:\n        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail=\"Invalid token\")\n    phone: str = payload.get(\"sub\")      # <-- now using phone!",
         "detail": "resume-matching-system.resources.auth.dependencies",
         "documentation": {}
     },

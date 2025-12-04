@@ -36,6 +36,7 @@ from apps.services.match_services.app.models.match_models import MatchResult
 from apps.services.match_services.app.models.upload_model import Resume, JobDescription
 from libs.service.jd_parser import parse_job_description
 
+from libs.service.resume_extractor import extract_resume_details
 
 
 
@@ -87,31 +88,38 @@ async def startup_event():
 @app.post("/upload/resume")
 async def upload_resume(
     file: UploadFile = File(...),
-    candidate_name: str = Form(...),
-    candidate_email: str = Form(...),
-    candidate_phone: str = Form(...),
-    years_of_experience: float = Form(...),
     db: Session = Depends(get_db),
-    current_user = Depends(get_current_user)   # token required
+    current_user = Depends(get_current_user)
 ):
     os.makedirs("temp", exist_ok=True)
 
     contents = await file.read()
     temp_path = os.path.join("temp", file.filename)
 
+    # Save temp file
     with open(temp_path, "wb") as f:
         f.write(contents)
 
+    # Extract text from resume PDF
     text = parse_resume_to_text(temp_path)
-    skills = extract_skills(text)
 
+    # 🔍 NEW: Extract structured info
+    extracted = extract_resume_details(text)
+
+    skills = extracted["skills"]
+    name = extracted["name"]
+    email = extracted["email"]
+    phone = extracted["phone"]
+    experience = extracted["experience"]
+
+    # Save resume
     resume = Resume(
         file_name=file.filename,
         text=text,
-        candidate_name=candidate_name,
-        candidate_email=candidate_email,
-        candidate_phone=candidate_phone,
-        years_of_experience=years_of_experience,
+        candidate_name=name,
+        candidate_email=email,
+        candidate_phone=phone,
+        years_of_experience=experience,
         user_id=current_user.id
     )
 
@@ -121,8 +129,10 @@ async def upload_resume(
 
     return {
         "resume_id": resume.id,
-        "message": "Resume uploaded successfully"
+        "message": "Resume uploaded successfully",
+        "extracted_details": extracted
     }
+
 
 
 @app.post("/upload/jd")

@@ -55,6 +55,7 @@ def verify(data: OTPVerifySchema, db: Session = Depends(get_db)):
     return {
         "message": "Verification successful",
         "user": {"id": existing.id, "phone": existing.phone},
+        "role": existing.role,
         "access_token": token,
         "token_type": "bearer"
     }

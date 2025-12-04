@@ -18,11 +18,11 @@ def get_current_user(
     if payload is None:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid token")
 
-    email: str = payload.get("sub")
-    if email is None:
+    phone: str = payload.get("sub")      # <-- now using phone!
+    if phone is None:
         raise HTTPException(status_code=401, detail="Invalid token payload")
 
-    user = db.query(User).filter(User.email == email).first()
+    user = db.query(User).filter(User.phone == phone).first()
     if not user:
         raise HTTPException(status_code=401, detail="User not found")
 

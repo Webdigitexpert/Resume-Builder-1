@@ -1,5 +1,7 @@
 from pydantic import BaseModel
+import sqlalchemy.dialects.postgresql
 from typing import List, Optional
+from uuid import UUID
 
 class JobCreate(BaseModel):
     title: str
@@ -9,7 +11,7 @@ class JobCreate(BaseModel):
 
 
 class JobResponse(JobCreate):
-    id: str
+    id: UUID
 
     class Config:
         orm_mode = True
