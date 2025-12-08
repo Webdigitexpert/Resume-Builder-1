@@ -353,6 +353,46 @@
         "documentation": {}
     },
     {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "parse_resume_to_text",
         "importPath": "libs.service.resume_parser",
         "description": "libs.service.resume_parser",
@@ -361,7 +401,7 @@
         "documentation": {}
     },
     {
-        "label": "extract_skills",
+        "label": "extract_details",
         "importPath": "libs.service.resume_parser",
         "description": "libs.service.resume_parser",
         "isExtraImport": true,
@@ -1235,38 +1275,6 @@
         "documentation": {}
     },
     {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Optional",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "List",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Counter",
         "importPath": "collections",
         "description": "collections",
@@ -1381,6 +1389,14 @@
     },
     {
         "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -1574,37 +1590,11 @@
         "documentation": {}
     },
     {
-        "label": "docx2txt",
-        "kind": 6,
+        "label": "parser",
+        "importPath": "dateutil",
+        "description": "dateutil",
         "isExtraImport": true,
-        "importPath": "docx2txt",
-        "description": "docx2txt",
-        "detail": "docx2txt",
-        "documentation": {}
-    },
-    {
-        "label": "PdfReader",
-        "importPath": "PyPDF2",
-        "description": "PyPDF2",
-        "isExtraImport": true,
-        "detail": "PyPDF2",
-        "documentation": {}
-    },
-    {
-        "label": "pytesseract",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "pytesseract",
-        "description": "pytesseract",
-        "detail": "pytesseract",
-        "documentation": {}
-    },
-    {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
+        "detail": "dateutil",
         "documentation": {}
     },
     {
@@ -2102,7 +2092,7 @@
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
         "description": "resume-matching-system.libs.service.resume_parser",
-        "peekOfCode": "def extract_text_from_pdf(path):\n    reader = PdfReader(path)\n    return \"\\n\".join([page.extract_text() for page in reader.pages])\ndef extract_text_from_docx(path):\n    return docx2txt.process(path)\ndef extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)",
+        "peekOfCode": "def extract_text_from_pdf(path: str) -> str:\n    from PyPDF2 import PdfReader\n    reader = PdfReader(path)\n    pages = []\n    for p in reader.pages:\n        try:\n            txt = p.extract_text()\n            if txt:\n                pages.append(txt)\n        except:",
         "detail": "resume-matching-system.libs.service.resume_parser",
         "documentation": {}
     },
@@ -2111,7 +2101,7 @@
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
         "description": "resume-matching-system.libs.service.resume_parser",
-        "peekOfCode": "def extract_text_from_docx(path):\n    return docx2txt.process(path)\ndef extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:",
+        "peekOfCode": "def extract_text_from_docx(path: str) -> str:\n    import docx2txt\n    return docx2txt.process(path) or \"\"\ndef extract_text_from_image(path: str) -> str:\n    import pytesseract\n    from PIL import Image\n    return pytesseract.image_to_string(Image.open(path)) or \"\"\ndef parse_resume_to_text(file_path: str) -> str:\n    fp = file_path.lower()\n    if fp.endswith(\".pdf\"):",
         "detail": "resume-matching-system.libs.service.resume_parser",
         "documentation": {}
     },
@@ -2120,7 +2110,7 @@
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
         "description": "resume-matching-system.libs.service.resume_parser",
-        "peekOfCode": "def extract_text_from_image(path):\n    return pytesseract.image_to_string(Image.open(path))\ndef parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:\n        return extract_text_from_image(file_path)\ndef extract_skills(text: str):",
+        "peekOfCode": "def extract_text_from_image(path: str) -> str:\n    import pytesseract\n    from PIL import Image\n    return pytesseract.image_to_string(Image.open(path)) or \"\"\ndef parse_resume_to_text(file_path: str) -> str:\n    fp = file_path.lower()\n    if fp.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif fp.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)",
         "detail": "resume-matching-system.libs.service.resume_parser",
         "documentation": {}
     },
@@ -2129,7 +2119,52 @@
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
         "description": "resume-matching-system.libs.service.resume_parser",
-        "peekOfCode": "def parse_resume_to_text(file_path: str):\n    if file_path.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif file_path.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:\n        return extract_text_from_image(file_path)\ndef extract_skills(text: str):\n    skill_keywords = [\"python\", \"fastapi\", \"docker\", \"aws\", \"ml\", \"nlp\", \"react\"]\n    return [skill for skill in skill_keywords if skill.lower() in text.lower()]",
+        "peekOfCode": "def parse_resume_to_text(file_path: str) -> str:\n    fp = file_path.lower()\n    if fp.endswith(\".pdf\"):\n        return extract_text_from_pdf(file_path)\n    elif fp.endswith(\".docx\"):\n        return extract_text_from_docx(file_path)\n    else:\n        return extract_text_from_image(file_path)\n########################################\n# BASIC FIELDS — EMAIL, PHONE, NAME",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_email",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_email(text: str) -> str | None:\n    m = re.search(r\"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\", text)\n    return m.group(0) if m else None\ndef extract_phone(text: str) -> str | None:\n    m = re.search(r\"(\\+?\\d[\\d\\s\\-()]{7,})\", text)\n    if not m:\n        return None\n    ph = re.sub(r\"\\s+\", \" \", m.group(1)).strip()\n    return ph\ndef extract_name(text: str) -> str | None:",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_phone",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_phone(text: str) -> str | None:\n    m = re.search(r\"(\\+?\\d[\\d\\s\\-()]{7,})\", text)\n    if not m:\n        return None\n    ph = re.sub(r\"\\s+\", \" \", m.group(1)).strip()\n    return ph\ndef extract_name(text: str) -> str | None:\n    \"\"\"\n    Extracts candidate name even when first and last names are split across lines,\n    like:",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_name",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_name(text: str) -> str | None:\n    \"\"\"\n    Extracts candidate name even when first and last names are split across lines,\n    like:\n        Jiaming\n        Chen\n    Or when combined on one line.\n    \"\"\"\n    lines = [l.strip() for l in text.splitlines()]\n    lines = [l for l in lines if l and l not in [\"|\", \"-\"]]",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_work_section",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_work_section(text: str) -> str:\n    \"\"\"\n    Extract the WORK EXPERIENCE block so other dates (education/projects) don't pollute the result.\n    \"\"\"\n    match = re.search(\n        r\"(WORK EXPERIENCE|EXPERIENCE)(.*?)(PROJECTS|EDUCATION|SKILLS|CERTIFICATIONS|SUMMARY)\",\n        text,\n        re.IGNORECASE | re.DOTALL,\n    )\n    if match:",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_experience_years",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_experience_years(text: str) -> dict:\n    text = text.lower()\n    total_months = 0\n    #########################\n    # 1. EXPLICIT \"4 months\", \"10 mos\", \"2 years\"\n    #########################\n    for val, unit in re.findall(r\"(\\d+(?:\\.\\d+)?)\\s*(month|months|mos)\", text):\n        total_months += float(val)\n    for val, unit in re.findall(r\"(\\d+(?:\\.\\d+)?)\\s*(year|years|yr|yrs)\", text):\n        total_months += float(val) * 12",
         "detail": "resume-matching-system.libs.service.resume_parser",
         "documentation": {}
     },
@@ -2138,7 +2173,16 @@
         "kind": 2,
         "importPath": "resume-matching-system.libs.service.resume_parser",
         "description": "resume-matching-system.libs.service.resume_parser",
-        "peekOfCode": "def extract_skills(text: str):\n    skill_keywords = [\"python\", \"fastapi\", \"docker\", \"aws\", \"ml\", \"nlp\", \"react\"]\n    return [skill for skill in skill_keywords if skill.lower() in text.lower()]",
+        "peekOfCode": "def extract_skills(text: str) -> dict:\n    text = text.lower()\n    programming_languages = [\n        \"python\", \"java\", \"c\", \"c++\", \"c#\", \"javascript\", \"typescript\",\n        \"go\", \"rust\", \"kotlin\", \"swift\", \"ruby\", \"php\", \"r\", \"matlab\"\n    ]\n    frontend = [\n        \"html\", \"css\", \"javascript\", \"typescript\",\n        \"react\", \"reactjs\", \"next.js\", \"nextjs\", \"angular\",\n        \"vue\", \"vuejs\", \"jquery\", \"bootstrap\", \"tailwind\", \"chart.js\"",
+        "detail": "resume-matching-system.libs.service.resume_parser",
+        "documentation": {}
+    },
+    {
+        "label": "extract_details",
+        "kind": 2,
+        "importPath": "resume-matching-system.libs.service.resume_parser",
+        "description": "resume-matching-system.libs.service.resume_parser",
+        "peekOfCode": "def extract_details(text: str) -> dict:\n    work_text = extract_work_section(text)\n    exp = extract_experience_years(work_text)\n    print(\"\\n===== DEBUG: FIRST 20 LINES OF RESUME TEXT =====\")\n    for i, line in enumerate(text.splitlines()[:20]):\n        print(i, repr(line))\n    print(\"================================================\\n\")\n    return {\n        \"name\": extract_name(text),\n        \"email\": extract_email(text),",
         "detail": "resume-matching-system.libs.service.resume_parser",
         "documentation": {}
     },

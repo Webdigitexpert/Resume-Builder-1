@@ -2,10 +2,11 @@ from fastapi import FastAPI, UploadFile, File, Form, Response, HTTPException, De
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict
 import os, uuid
+from typing import Optional
 
 
 # ML / NLP services
-from libs.service.resume_parser import parse_resume_to_text, extract_skills
+from libs.service.resume_parser import parse_resume_to_text, extract_details
 from libs.service.jd_parser import parse_job_description
 from libs.service.embedding_service import generate_embeddings
 from libs.service.match_scoring import calculate_similarity_score, skill_gap_analysis
@@ -96,30 +97,46 @@ async def upload_resume(
     contents = await file.read()
     temp_path = os.path.join("temp", file.filename)
 
-    # Save temp file
+    # Save uploaded file
     with open(temp_path, "wb") as f:
         f.write(contents)
 
-    # Extract text from resume PDF
-    text = parse_resume_to_text(temp_path)
+    # Extract text safely
+    try:
+        text = parse_resume_to_text(temp_path)
+    except Exception as e:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Error extracting text: {str(e)}"
+        )
 
-    # 🔍 NEW: Extract structured info
-    extracted = extract_resume_details(text)
+    # Ensure text exists
+    if not text or not text.strip():
+        raise HTTPException(
+            status_code=400,
+            detail="Unable to extract text from resume."
+        )
 
+    # Extract structured info from resume
+    extracted = extract_details(text)
+
+    # Unpack details
     skills = extracted["skills"]
     name = extracted["name"]
     email = extracted["email"]
     phone = extracted["phone"]
-    experience = extracted["experience"]
+    years = extracted["experience"]["years"]
+    months = extracted["experience"]["months"]
 
-    # Save resume
+    # Save into DB
     resume = Resume(
         file_name=file.filename,
         text=text,
         candidate_name=name,
         candidate_email=email,
         candidate_phone=phone,
-        years_of_experience=experience,
+        years_of_experience=years,
+        months_of_experience=months,
         user_id=current_user.id
     )
 
@@ -135,45 +152,41 @@ async def upload_resume(
 
 
 
+
 @app.post("/upload/jd")
 async def upload_jd(
-    text: str | None = Form(None),
-    file: UploadFile | None = File(None),
-    db: Session = Depends(get_db),
-    user = Depends(get_current_user)
+    text: Optional[str] = Form(None),
+    file: Optional[UploadFile] = File(None)
 ):
-    # If neither text nor file is provided
-    if not text and not file:
-        raise HTTPException(status_code=400, detail="Provide text or upload a PDF File")
+    # Case 1: TEXT ONLY
+    if text and not file:
+        return {
+            "mode": "text_only",
+            "received_text": text
+        }
 
-    # If plain text provided
-    if text:
-        jd_text = text
-        file_name = "manual-input"
-    else:
-        # Handle uploaded file
-        os.makedirs("temp", exist_ok=True)
+    # Case 2: FILE ONLY
+    if file and not text:
         contents = await file.read()
-        temp_path = os.path.join("temp", file.filename)
+        return {
+            "mode": "file_only",
+            "file_name": file.filename,
+            "file_size": len(contents)
+        }
 
-        with open(temp_path, "wb") as f:
-            f.write(contents)
+    # Case 3: BOTH TEXT + FILE
+    if file and text:
+        contents = await file.read()
+        return {
+            "mode": "text_and_file",
+            "received_text": text,
+            "file_name": file.filename,
+            "file_size": len(contents)
+        }
 
-        jd_text = parse_job_description(temp_path)
-        file_name = file.filename
+    # Case 4: Nothing provided
+    return {"error": "You must send either text or file or both."}
 
-    # Save to DB
-    jd = JobDescription(file_name=file_name, text=jd_text)
-    db.add(jd)
-    db.commit()
-    db.refresh(jd)
-
-    return {
-        "jd_id": jd.id,
-        "file_name": file_name,
-        "text": jd_text[:300] + "..." if len(jd_text) > 300 else jd_text,
-        "message": "Job Description uploaded successfully"
-    }
 
 @app.post("/match")
 async def match(request: MatchRequest, db: Session = Depends(get_db),

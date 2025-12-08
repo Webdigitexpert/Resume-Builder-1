@@ -23,6 +23,7 @@ class Resume(Base):
     candidate_email = Column(String, nullable=True)
     candidate_phone = Column(String, nullable=True)
     years_of_experience = Column(Float, nullable=True)
+    months_of_experience = Column(Integer, nullable=True)
 
     # Optional: link to User
     user_id = Column(String, ForeignKey("users.id"), nullable=True)
